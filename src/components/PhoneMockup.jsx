@@ -33,7 +33,7 @@ function PhoneMockup() {
           >
             <div className="mockup-screen">
               <img 
-                src="/screenshots/settings-page.png" 
+                src={`${import.meta.env.BASE_URL}screenshots/settings-page.png`}
                 alt="Settings"
               />
             </div>
@@ -48,7 +48,7 @@ function PhoneMockup() {
           >
             <div className="mockup-screen">
               <img 
-                src="/screenshots/question-feed-page.png" 
+                src={`${import.meta.env.BASE_URL}screenshots/question-feed-page.png`}
                 alt="Question Feed"
               />
             </div>
@@ -63,7 +63,7 @@ function PhoneMockup() {
           >
             <div className="mockup-screen">
               <img 
-                src="/screenshots/stats-page.png" 
+                src={`${import.meta.env.BASE_URL}screenshots/stats-page.png`}
                 alt="Stats"
               />
             </div>

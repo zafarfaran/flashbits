@@ -113,7 +113,7 @@ function Hero() {
                 <div className="phone-notch"></div>
                 <div className="phone-screen scanlines">
                   <img 
-                    src="/screenshots/question-feed-page.png" 
+                    src={`${import.meta.env.BASE_URL}screenshots/question-feed-page.png`}
                     alt="flashbits App - Question Feed"
                   />
                 </div>

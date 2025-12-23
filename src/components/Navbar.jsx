@@ -22,7 +22,7 @@ function Navbar() {
     >
       <div className="container navbar-content">
         <a href="#" className="logo">
-          <img src="/flashbits.png" alt="flashbits" className="logo-img" />
+          <img src={`${import.meta.env.BASE_URL}flashbits.png`} alt="flashbits" className="logo-img" />
           <span>flashbits</span>
         </a>
 
