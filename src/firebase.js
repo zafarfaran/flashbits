@@ -8,13 +8,14 @@ import { getFirestore, collection, query, orderBy, limit, getDocs, getCountFromS
 
 // Firebase configuration (same as the app)
 const firebaseConfig = {
-  apiKey: "AIzaSyCC8QQdswUwhn9Cc_9AZjTOI-rYisjYL3M",
-  authDomain: "flashprep-11c85.firebaseapp.com",
-  projectId: "flashprep-11c85",
-  storageBucket: "flashprep-11c85.firebasestorage.app",
-  messagingSenderId: "258968844420",
-  appId: "1:258968844420:web:3ce107a1de69ffa8d5aad1",
-  measurementId: "G-Q1XG9SFFTB"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
+
 };
 
 // Initialize Firebase
