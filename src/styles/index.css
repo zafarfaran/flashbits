@@ -106,41 +106,26 @@ body {
 .glow {
   position: absolute;
   border-radius: 50%;
-  filter: blur(150px);
+  filter: blur(120px);
   opacity: 0.2;
-  animation: pulse 12s ease-in-out infinite;
+  will-change: opacity;
+  contain: strict;
 }
 
 .glow-1 {
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
   background: radial-gradient(circle, var(--accent-glow), transparent 70%);
-  top: -200px;
-  left: -100px;
-  animation-delay: 0s;
+  top: -150px;
+  left: -80px;
 }
 
 .glow-2 {
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
   background: radial-gradient(circle, var(--purple-glow), transparent 70%);
-  top: 40%;
-  right: -150px;
-  animation-delay: 4s;
-}
-
-.glow-3 {
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, var(--orange-glow), transparent 70%);
-  bottom: 15%;
-  left: 25%;
-  animation-delay: 8s;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 0.15; transform: scale(1); }
-  50% { opacity: 0.25; transform: scale(1.05); }
+  top: 50%;
+  right: -120px;
 }
 
 .floating-particles {
@@ -153,19 +138,19 @@ body {
 
 .particle {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.4);
+  width: 2px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 50%;
-  opacity: 0.15;
-  animation: float-up linear infinite;
+  will-change: transform;
+  animation: float-up 18s linear infinite;
 }
 
 @keyframes float-up {
-  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-  10% { opacity: 0.3; }
-  90% { opacity: 0.3; }
-  100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+  0% { transform: translateY(100vh); opacity: 0; }
+  5% { opacity: 0.3; }
+  95% { opacity: 0.3; }
+  100% { transform: translateY(-100vh); opacity: 0; }
 }
 
 /* ============================================
@@ -481,14 +466,8 @@ section {
 
 .phone-wrapper {
   position: relative;
-  transform: rotateY(-15deg) rotateX(5deg);
+  transform: rotateY(-8deg) rotateX(3deg);
   transform-style: preserve-3d;
-  animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: rotateY(-15deg) rotateX(5deg) translateY(0); }
-  50% { transform: rotateY(-15deg) rotateX(5deg) translateY(-20px); }
 }
 
 .phone-frame {
@@ -1240,31 +1219,10 @@ section {
    3D EFFECTS & ENHANCEMENTS
    ============================================ */
 
-/* Holographic shimmer effect */
+/* Holographic shimmer effect - simplified for performance */
 .holographic {
   position: relative;
   overflow: hidden;
-}
-
-.holographic::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    105deg,
-    transparent 40%,
-    rgba(0, 255, 148, 0.1) 45%,
-    rgba(0, 255, 170, 0.2) 50%,
-    rgba(0, 255, 148, 0.1) 55%,
-    transparent 60%
-  );
-  background-size: 200% 100%;
-  animation: shimmer 3s ease-in-out infinite;
-}
-
-@keyframes shimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
 }
 
 /* Perspective container */
@@ -1273,69 +1231,21 @@ section {
   transform-style: preserve-3d;
 }
 
-/* Glowing orbs */
+/* Glowing orbs - static for performance */
 .orb {
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
-  animation: orb-float 15s ease-in-out infinite;
 }
 
-@keyframes orb-float {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(30px, -30px) scale(1.1); }
-  50% { transform: translate(-20px, 20px) scale(0.9); }
-  75% { transform: translate(20px, 30px) scale(1.05); }
-}
-
-/* Code lines animation */
+/* Code lines animation - disabled for performance */
 .code-lines {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-  pointer-events: none;
+  display: none;
 }
 
-.code-line {
-  position: absolute;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
-  animation: code-flow 8s linear infinite;
-  opacity: 0.3;
-}
-
-@keyframes code-flow {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100vw); }
-}
-
-/* Matrix rain effect */
+/* Matrix rain effect - disabled for performance */
 .matrix-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.03;
-  background: 
-    repeating-linear-gradient(
-      0deg,
-      transparent 0px,
-      transparent 2px,
-      rgba(0, 255, 148, 0.5) 2px,
-      rgba(0, 255, 148, 0.5) 4px
-    );
-  animation: matrix-scroll 20s linear infinite;
-}
-
-@keyframes matrix-scroll {
-  0% { background-position: 0 0; }
-  100% { background-position: 0 1000px; }
+  display: none;
 }
 
 /* Cyber border */
@@ -1496,25 +1406,9 @@ section {
   100% { transform: translateX(0); }
 }
 
-/* Enhanced phone mockup 3D */
+/* Enhanced phone mockup 3D - simplified for performance */
 .phone-3d {
   transform-style: preserve-3d;
-  animation: phone-3d-rotate 10s ease-in-out infinite;
-}
-
-@keyframes phone-3d-rotate {
-  0%, 100% { 
-    transform: rotateY(-15deg) rotateX(5deg) translateY(0);
-  }
-  25% { 
-    transform: rotateY(-10deg) rotateX(8deg) translateY(-10px);
-  }
-  50% { 
-    transform: rotateY(-20deg) rotateX(3deg) translateY(-20px);
-  }
-  75% { 
-    transform: rotateY(-12deg) rotateX(6deg) translateY(-10px);
-  }
 }
 
 /* Reflection effect for phone */

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { fetchRecentActivities } from '../firebase'
 
 // Fallback notifications for when there's no real data
 const fallbackNotifications = [
@@ -20,17 +19,17 @@ function SocialProof() {
   const [isVisible, setIsVisible] = useState(true)
   const [isLoading, setIsLoading] = useState(true)
 
-  // Fetch real activities from Firebase
+  // Lazy load Firebase and fetch activities after initial render
   useEffect(() => {
-    const loadActivities = async () => {
+    // Delay Firebase loading to after page is interactive
+    const loadFirebaseAndActivities = async () => {
       try {
+        // Dynamic import - Firebase only loads when this runs
+        const { fetchRecentActivities } = await import('../firebase')
         const activities = await fetchRecentActivities(20)
         
         if (activities && activities.length > 0) {
           setNotifications(activities)
-          console.log('📣 Loaded', activities.length, 'real activities')
-        } else {
-          console.log('📣 No activities found, using fallback')
         }
       } catch (error) {
         console.error('Error loading activities:', error)
@@ -39,11 +38,9 @@ function SocialProof() {
       }
     }
 
-    loadActivities()
-    
-    // Refresh every 2 minutes
-    const refreshInterval = setInterval(loadActivities, 120000)
-    return () => clearInterval(refreshInterval)
+    // Wait 3 seconds before loading Firebase to prioritize page load
+    const timeoutId = setTimeout(loadFirebaseAndActivities, 3000)
+    return () => clearTimeout(timeoutId)
   }, [])
 
   // Cycle through notifications every 1 minute

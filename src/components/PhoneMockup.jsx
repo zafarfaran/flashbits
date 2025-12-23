@@ -26,46 +26,70 @@ function PhoneMockup() {
         <div className="mockup-container">
           <motion.div 
             className="mockup-phone left"
-            initial={{ opacity: 0, x: -100, rotateY: 45 }}
-            whileInView={{ opacity: 0.7, x: 0, rotateY: 25 }}
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 0.7, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
           >
             <div className="mockup-screen">
-              <img 
-                src={`${import.meta.env.BASE_URL}screenshots/settings-page.png`}
-                alt="Settings"
-              />
+              <picture>
+                <source 
+                  srcSet={`${import.meta.env.BASE_URL}screenshots/settings-page.webp`}
+                  type="image/webp"
+                />
+                <img 
+                  src={`${import.meta.env.BASE_URL}screenshots/settings-page.png`}
+                  alt="Settings"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
           </motion.div>
           
           <motion.div 
             className="mockup-phone center"
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: -20 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="mockup-screen">
-              <img 
-                src={`${import.meta.env.BASE_URL}screenshots/question-feed-page.png`}
-                alt="Question Feed"
-              />
+              <picture>
+                <source 
+                  srcSet={`${import.meta.env.BASE_URL}screenshots/question-feed-page.webp`}
+                  type="image/webp"
+                />
+                <img 
+                  src={`${import.meta.env.BASE_URL}screenshots/question-feed-page.png`}
+                  alt="Question Feed"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
           </motion.div>
           
           <motion.div 
             className="mockup-phone right"
-            initial={{ opacity: 0, x: 100, rotateY: -45 }}
-            whileInView={{ opacity: 0.7, x: 0, rotateY: -25 }}
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 0.7, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
           >
             <div className="mockup-screen">
-              <img 
-                src={`${import.meta.env.BASE_URL}screenshots/stats-page.png`}
-                alt="Stats"
-              />
+              <picture>
+                <source 
+                  srcSet={`${import.meta.env.BASE_URL}screenshots/stats-page.webp`}
+                  type="image/webp"
+                />
+                <img 
+                  src={`${import.meta.env.BASE_URL}screenshots/stats-page.png`}
+                  alt="Stats"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
           </motion.div>
         </div>
