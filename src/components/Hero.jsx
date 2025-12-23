@@ -1,0 +1,131 @@
+import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { FireIcon, PhoneIcon, PlayIcon } from './Icons'
+
+function Hero() {
+  const [typedText, setTypedText] = useState('')
+  const fullText = 'Swipe-Based'
+  
+  useEffect(() => {
+    let index = 0
+    const timer = setInterval(() => {
+      if (index <= fullText.length) {
+        setTypedText(fullText.slice(0, index))
+        index++
+      } else {
+        clearInterval(timer)
+      }
+    }, 100)
+    return () => clearInterval(timer)
+  }, [])
+
+  return (
+    <section className="hero">
+      <div className="container">
+        <div className="hero-content">
+          <motion.div 
+            className="hero-text"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <motion.div 
+              className="hero-badge float-badge"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <FireIcon size={14} color="#00FF94" /> Blind 75 Now Available
+            </motion.div>
+            
+            <h1>
+              Master Coding Interviews with{' '}
+              <span className="gradient-text">{typedText}</span>
+              <span className="terminal-cursor"></span>{' '}
+              Learning
+            </h1>
+            
+            <p>
+              Stop doom scrolling. Start learning. flashbits transforms interview prep 
+              into an addictive, TikTok-style experience. Swipe through questions, 
+              earn XP, and level up your skills.
+            </p>
+            
+            <div className="hero-cta">
+              <motion.a 
+                href="#download" 
+                className="btn btn-primary"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <PhoneIcon size={16} /> Download App
+              </motion.a>
+              <motion.a 
+                href="#demo" 
+                className="btn btn-secondary"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <PlayIcon size={16} /> Watch Demo
+              </motion.a>
+            </div>
+            
+            <div className="hero-stats">
+              <motion.div 
+                className="hero-stat hero-stat-featured"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <div className="hero-stat-value">Blind 75</div>
+                <div className="hero-stat-label">LeetCode Classics</div>
+              </motion.div>
+              <motion.div 
+                className="hero-stat"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+              >
+                <div className="hero-stat-value">1,000+</div>
+                <div className="hero-stat-label">DSA Questions</div>
+              </motion.div>
+              <motion.div 
+                className="hero-stat"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
+                <div className="hero-stat-value">14</div>
+                <div className="hero-stat-label">Topic Categories</div>
+              </motion.div>
+            </div>
+          </motion.div>
+          
+          <motion.div 
+            className="hero-phone perspective-container"
+            initial={{ opacity: 0, x: 50, rotateY: 45 }}
+            animate={{ opacity: 1, x: 0, rotateY: 0 }}
+            transition={{ duration: 1, delay: 0.4, type: 'spring', damping: 20 }}
+          >
+            <div className="phone-wrapper phone-3d">
+              <div className="phone-glow"></div>
+              <div className="phone-frame holographic">
+                <div className="phone-notch"></div>
+                <div className="phone-screen scanlines">
+                  <img 
+                    src="/screenshots/question-feed-page.png" 
+                    alt="flashbits App - Question Feed"
+                  />
+                </div>
+              </div>
+              <div className="phone-reflection"></div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default Hero
+
