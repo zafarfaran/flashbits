@@ -7,11 +7,11 @@ export default defineConfig(({ mode }) => ({
     {
       name: 'print-pages-base',
       configResolved(config) {
-        // Shows up in GitHub Actions logs during the build step
+        // Shows up in build logs
         console.log('[vite] mode=', mode, ' base=', config.base)
       },
     },
   ],
-  base: '/flashbits/',
+  base: '/',
 }))
 

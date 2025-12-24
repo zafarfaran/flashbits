@@ -12,7 +12,7 @@ if (rootEl && import.meta.env.PROD) {
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/flashbits">
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/contact" element={<Contact />} />
