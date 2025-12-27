@@ -6,17 +6,17 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, query, orderBy, limit, getDocs, getCountFromServer, where } from 'firebase/firestore';
 
-// Firebase configuration (same as the app)
+// Firebase configuration
+// Uses environment variables for deployment (Vite uses VITE_ prefix)
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
-  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID || undefined
+  appId: import.meta.env.VITE_FIREBASE_APP_ID ,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -35,39 +35,75 @@ const countryCodeToFlag = {
 
 /**
  * Fetch recent activities from Firestore
+ * Security rules require isPublic == true and no userId field
  */
 export const fetchRecentActivities = async (maxResults = 20) => {
   try {
+    const limitCount = Math.min(maxResults, 50); // Enforce max limit
     const activitiesRef = collection(db, 'activities');
     
-    // Simple query - just order by createdAt (no composite index needed)
-    // All activities are public by default, so we filter client-side if needed
-    const q = query(
-      activitiesRef,
-      orderBy('createdAt', 'desc'),
-      limit(maxResults)
-    );
+    // Try query with where clause first (requires index)
+    try {
+      const q = query(
+        activitiesRef,
+        where('isPublic', '==', true),
+        orderBy('createdAt', 'desc'),
+        limit(limitCount)
+      );
 
-    const snapshot = await getDocs(q);
-    
-    // Filter for public activities client-side
-    return snapshot.docs
-      .map(doc => {
-        const data = doc.data();
-        const createdAt = data.createdAt?.toDate?.() || new Date();
+      const snapshot = await getDocs(q);
+      
+      return snapshot.docs
+        .map(doc => {
+          const data = doc.data();
+          const createdAt = data.createdAt?.toDate?.() || new Date();
+          
+          return {
+            id: doc.id,
+            isPublic: data.isPublic,
+            name: data.displayName || 'Anonymous',
+            country: data.country || 'Unknown',
+            flag: countryCodeToFlag[data.countryCode] || '🌍',
+            action: data.message || 'is practicing',
+            time: getTimeAgo(createdAt),
+            createdAt,
+          };
+        });
+    } catch (indexError) {
+      // If index doesn't exist, query without where and filter client-side
+      // Security rules will still enforce isPublic == true
+      if (indexError.code === 'failed-precondition' || indexError.code === 'unavailable') {
+        console.warn('Firestore index not found. Using fallback query.');
         
-        return {
-          id: doc.id,
-          isPublic: data.isPublic,
-          name: data.displayName || 'Anonymous',
-          country: data.country || 'Unknown',
-          flag: countryCodeToFlag[data.countryCode] || '🌍',
-          action: data.message || 'is practicing',
-          time: getTimeAgo(createdAt),
-          createdAt,
-        };
-      })
-      .filter(activity => activity.isPublic !== false); // Show all unless explicitly private
+        const fallbackQuery = query(
+          activitiesRef,
+          orderBy('createdAt', 'desc'),
+          limit(limitCount * 2) // Fetch more to account for filtering
+        );
+
+        const snapshot = await getDocs(fallbackQuery);
+        
+        return snapshot.docs
+          .map(doc => {
+            const data = doc.data();
+            const createdAt = data.createdAt?.toDate?.() || new Date();
+            
+            return {
+              id: doc.id,
+              isPublic: data.isPublic,
+              name: data.displayName || 'Anonymous',
+              country: data.country || 'Unknown',
+              flag: countryCodeToFlag[data.countryCode] || '🌍',
+              action: data.message || 'is practicing',
+              time: getTimeAgo(createdAt),
+              createdAt,
+            };
+          })
+          .filter(activity => activity.isPublic === true) // Client-side filter
+          .slice(0, limitCount);
+      }
+      throw indexError; // Re-throw if it's a different error
+    }
   } catch (error) {
     console.error('Error fetching activities:', error);
     return [];

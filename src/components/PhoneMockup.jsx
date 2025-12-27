@@ -46,9 +46,31 @@ function PhoneMockup() {
               </picture>
             </div>
           </motion.div>
-          
           <motion.div 
             className="mockup-phone center"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 0.7, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <div className="mockup-screen">
+              <picture>
+                <source 
+                  srcSet={`${import.meta.env.BASE_URL}screenshots/stats-page.webp`}
+                  type="image/webp"
+                />
+                <img 
+                  src={`${import.meta.env.BASE_URL}screenshots/stats-page.png`}
+                  alt="Stats"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            className="mockup-phone right"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: -20 }}
             viewport={{ once: true }}
@@ -70,28 +92,7 @@ function PhoneMockup() {
             </div>
           </motion.div>
           
-          <motion.div 
-            className="mockup-phone right"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 0.7, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <div className="mockup-screen">
-              <picture>
-                <source 
-                  srcSet={`${import.meta.env.BASE_URL}screenshots/stats-page.webp`}
-                  type="image/webp"
-                />
-                <img 
-                  src={`${import.meta.env.BASE_URL}screenshots/stats-page.png`}
-                  alt="Stats"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-            </div>
-          </motion.div>
+        
         </div>
       </div>
     </section>

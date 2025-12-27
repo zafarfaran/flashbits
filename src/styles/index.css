@@ -845,6 +845,7 @@ section {
     0 0 0 1px rgba(255, 255, 255, 0.05);
   transition: all 0.4s ease;
   transform-style: preserve-3d;
+  flex-shrink: 0;
 }
 
 .mockup-phone.left {
@@ -865,15 +866,18 @@ section {
 .mockup-screen {
   width: 100%;
   height: 100%;
-  border-radius: 28px;
+  border-radius: 20px;
   overflow: hidden;
+  background: #000;
 }
 
 .mockup-screen img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
+
 
 /* ============================================
    STATS SECTION
@@ -1198,6 +1202,7 @@ section {
     flex-wrap: wrap;
     justify-content: center;
   }
+  
 }
 
 @media (max-width: 480px) {
@@ -1213,6 +1218,7 @@ section {
     width: 220px;
     height: 460px;
   }
+  
 }
 
 /* ============================================

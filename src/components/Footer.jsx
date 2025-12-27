@@ -1,7 +1,32 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 function Footer() {
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  // Handle hash link clicks - navigate to home if needed, then scroll
+  const handleHashLink = (e, hash) => {
+    e.preventDefault()
+    if (location.pathname !== '/') {
+      navigate(`/${hash}`)
+      // Wait for navigation, then scroll
+      setTimeout(() => {
+        const element = document.querySelector(hash)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+      }, 100)
+    } else {
+      // Update URL hash
+      window.history.pushState(null, '', hash)
+      const element = document.querySelector(hash)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }
+  }
+
   return (
     <motion.footer 
       className="footer"
@@ -12,15 +37,15 @@ function Footer() {
     >
       <div className="container">
         <div className="footer-content">
-          <div className="footer-logo">
+          <Link to="/" className="footer-logo">
             <img src={`${import.meta.env.BASE_URL}flashbits.png`} alt="flashbits" className="logo-img" />
             <span>flashbits</span>
-          </div>
+          </Link>
           
           <ul className="footer-links">
-            <li><a href="#features">Features</a></li>
-            <li><a href="#topics">Topics</a></li>
-            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#features" onClick={(e) => handleHashLink(e, '#features')}>Features</a></li>
+            <li><a href="#topics" onClick={(e) => handleHashLink(e, '#topics')}>Topics</a></li>
+            <li><a href="#faq" onClick={(e) => handleHashLink(e, '#faq')}>FAQ</a></li>
             <li><Link to="/privacy">Privacy</Link></li>
             <li><Link to="/terms">Terms</Link></li>
             <li><Link to="/contact">Contact</Link></li>

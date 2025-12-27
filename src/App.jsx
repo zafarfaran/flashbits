@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import ProblemSets from './components/ProblemSets'
@@ -17,10 +18,25 @@ import SocialProof from './components/SocialProof'
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false)
+  const location = useLocation()
 
   useEffect(() => {
     setIsLoaded(true)
   }, [])
+
+  // Handle hash scrolling when component mounts or hash changes
+  useEffect(() => {
+    if (isLoaded && location.hash) {
+      // Map #download to #get-started since there's no #download section
+      const hash = location.hash === '#download' ? '#get-started' : location.hash
+      setTimeout(() => {
+        const element = document.querySelector(hash)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+      }, 300) // Wait for page to render
+    }
+  }, [isLoaded, location.hash])
 
   return (
     <div className="app">
