@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     question: 'Can I track my progress?',
-    answer: 'Absolutely! flashbits tracks your XP, accuracy by topic, questions answered, and more. You\'ll unlock hacker ranks as you progress from n00b to Elite status.'
+    answer: 'Absolutely! flashbits tracks your XP, accuracy by topic, questions answered, and more. You\'ll unlock hacker ranks as you progress from n00b to Legend status.'
   },
   {
     question: 'Are the questions updated regularly?',

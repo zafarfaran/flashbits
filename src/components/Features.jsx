@@ -45,7 +45,7 @@ const features = [
   {
     Icon: TrophyIcon,
     title: 'Earn XP & Level Up',
-    description: 'Gamified progression system. Earn XP, unlock ranks, and track your journey from n00b to Elite.'
+    description: 'Gamified progression system. Earn XP, unlock ranks, and track your journey from n00b to Legend.'
   },
   {
     Icon: BrainIcon,

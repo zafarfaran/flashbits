@@ -6,17 +6,22 @@ import {
   LaptopIcon, 
   ShieldIcon, 
   MaskIcon, 
-  CrownIcon 
+  SkullIcon,
+  EyeOffIcon,
+  SparklesIcon,
+  DiamondIcon
 } from './Icons'
 
 const ranks = [
-  { name: 'n00b', xp: '0 XP', Icon: UserIcon, color: '#606068' },
-  { name: 'Script Kiddie', xp: '5 XP', Icon: CodeIcon, color: '#00FF94' },
-  { name: 'Code Monkey', xp: '15 XP', Icon: TerminalIcon, color: '#00D4FF' },
-  { name: 'Hacktivist', xp: '30 XP', Icon: LaptopIcon, color: '#a855f7' },
-  { name: 'White Hat', xp: '50 XP', Icon: ShieldIcon, color: '#FFB800' },
-  { name: 'Black Hat', xp: '100 XP', Icon: MaskIcon, color: '#FF4D6A' },
-  { name: 'Elite', xp: '200 XP', Icon: CrownIcon, color: '#ffd700' }
+  { name: 'n00b', xp: '0 XP', Icon: UserIcon, color: '#6B7280', description: 'Just getting started' },
+  { name: 'Script Kiddie', xp: '50 XP', Icon: CodeIcon, color: '#10B981', description: 'Learning the basics' },
+  { name: 'Code Monkey', xp: '150 XP', Icon: TerminalIcon, color: '#3B82F6', description: 'Writing code daily' },
+  { name: 'Hacktivist', xp: '350 XP', Icon: LaptopIcon, color: '#8B5CF6', description: 'Fighting with code' },
+  { name: 'White Hat', xp: '700 XP', Icon: ShieldIcon, color: '#F59E0B', description: 'Ethical hacker' },
+  { name: 'Black Hat', xp: '1,500 XP', Icon: SkullIcon, color: '#EF4444', description: 'Elite programmer' },
+  { name: 'Ghost', xp: '3,000 XP', Icon: EyeOffIcon, color: '#00FF94', description: 'Legendary status' },
+  { name: 'Phantom', xp: '6,000 XP', Icon: SparklesIcon, color: '#A855F7', description: 'Mythical coder' },
+  { name: 'Legend', xp: '12,000 XP', Icon: DiamondIcon, color: '#FFD700', description: 'Ultimate mastery' }
 ]
 
 function Ranks() {
