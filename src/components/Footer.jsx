@@ -21,8 +21,8 @@ function Footer() {
             <li><a href="#features">Features</a></li>
             <li><a href="#topics">Topics</a></li>
             <li><a href="#faq">FAQ</a></li>
-            <li><a href="#privacy">Privacy</a></li>
-            <li><a href="#terms">Terms</a></li>
+            <li><Link to="/privacy">Privacy</Link></li>
+            <li><Link to="/terms">Terms</Link></li>
             <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
