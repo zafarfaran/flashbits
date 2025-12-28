@@ -27,69 +27,66 @@ function PhoneMockup() {
           <motion.div 
             className="mockup-phone left"
             initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 0.7, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <div className="mockup-screen">
-              <picture>
-                <source 
-                  srcSet={`${import.meta.env.BASE_URL}screenshots/settings-page.webp`}
-                  type="image/webp"
-                />
-                <img 
-                  src={`${import.meta.env.BASE_URL}screenshots/settings-page.png`}
-                  alt="Settings"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-            </div>
+            <picture>
+              <source 
+                srcSet={`${import.meta.env.BASE_URL}screenshots/settings-page.webp`}
+                type="image/webp"
+              />
+              <img 
+                src={`${import.meta.env.BASE_URL}screenshots/settings-page.png`}
+                alt="Settings"
+                loading="lazy"
+                decoding="async"
+                className="mockup-image"
+              />
+            </picture>
           </motion.div>
           <motion.div 
             className="mockup-phone center"
             initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 0.7, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <div className="mockup-screen">
-              <picture>
-                <source 
-                  srcSet={`${import.meta.env.BASE_URL}screenshots/stats-page.webp`}
-                  type="image/webp"
-                />
-                <img 
-                  src={`${import.meta.env.BASE_URL}screenshots/stats-page.png`}
-                  alt="Stats"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-            </div>
+            <picture>
+              <source 
+                srcSet={`${import.meta.env.BASE_URL}screenshots/stats-page.webp`}
+                type="image/webp"
+              />
+              <img 
+                src={`${import.meta.env.BASE_URL}screenshots/stats-page.png`}
+                alt="Stats"
+                loading="lazy"
+                decoding="async"
+                className="mockup-image"
+              />
+            </picture>
           </motion.div>
 
           <motion.div 
             className="mockup-phone right"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: -20 }}
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <div className="mockup-screen">
-              <picture>
-                <source 
-                  srcSet={`${import.meta.env.BASE_URL}screenshots/question-feed-page.webp`}
-                  type="image/webp"
-                />
-                <img 
-                  src={`${import.meta.env.BASE_URL}screenshots/question-feed-page.png`}
-                  alt="Question Feed"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-            </div>
+            <picture>
+              <source 
+                srcSet={`${import.meta.env.BASE_URL}screenshots/streak-screenshot.webp`}
+                type="image/webp"
+              />
+              <img 
+                src={`${import.meta.env.BASE_URL}screenshots/question-feed-page.png`}
+                alt="Question Feed"
+                loading="lazy"
+                decoding="async"
+                className="mockup-image"
+              />
+            </picture>
           </motion.div>
           
         
