@@ -29,7 +29,7 @@ const features = [
   {
     Icon: ZapIcon,
     title: 'Swipe to Learn',
-    description: 'TikTok-style interface. Just swipe through questions naturally and build muscle memory for interviews.'
+    description: 'Intuitive swipe-based interface designed for efficient learning. Build pattern recognition through natural, engaging practice sessions.'
   },
   {
     Icon: TargetIcon,
@@ -45,17 +45,17 @@ const features = [
   {
     Icon: TrophyIcon,
     title: 'Earn XP & Level Up',
-    description: 'Gamified progression system. Earn XP, unlock ranks, and track your journey from n00b to Legend.'
+    description: 'Gamified progression system that motivates consistent practice. Earn experience points, unlock achievement ranks, and track your development journey.'
   },
   {
     Icon: BrainIcon,
     title: 'Spaced Repetition',
-    description: 'Missed questions come back smarter. Our algorithm ensures you remember what matters.'
+    description: 'Intelligent algorithm that reinforces learning through strategic question repetition. Focus on areas that need improvement for optimal retention.'
   },
   {
     Icon: ChartIcon,
     title: 'Track Progress',
-    description: 'Detailed statistics on your performance. See your strengths and areas for improvement.'
+    description: 'Comprehensive performance analytics provide detailed insights into your strengths and identify areas requiring additional focus.'
   },
   {
     Icon: BuildingIcon,

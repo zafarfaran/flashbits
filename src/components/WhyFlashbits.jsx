@@ -148,8 +148,8 @@ function WhyFlashbits() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          In the age of AI, the knowledge round will be the
-          <span className="highlight-text"> defacto technical screen.</span> Stay ahead of the competition!
+          As technical interviews evolve, knowledge-based assessments are becoming the standard screening method. 
+          <span className="highlight-text"> Prepare effectively and stand out from the competition.</span>
         </motion.p>
         
         <div className="why-grid">
@@ -165,11 +165,10 @@ function WhyFlashbits() {
               <TopicTags />
             </div>
             <div className="why-card-content">
-              <h3>1000+ curated problems</h3>
+              <h3>1,000+ Curated Problems</h3>
               <p>
-                Our library covers every major DSA topic from arrays to advanced 
-                algorithms. Questions sourced from real FAANG interviews and 
-                verified by experienced engineers.
+                Comprehensive coverage of data structures and algorithms, from fundamentals to advanced topics. 
+                Questions are sourced from actual technical interviews and validated by industry professionals.
               </p>
             </div>
           </motion.div>
@@ -186,11 +185,10 @@ function WhyFlashbits() {
               <StatsChart />
             </div>
             <div className="why-card-content">
-              <h3>Track your growth</h3>
+              <h3>Track Your Growth</h3>
               <p>
-                See exactly where you stand with detailed analytics. Track your 
-                accuracy, speed, and topic mastery. Watch yourself improve from 
-                day one.
+                Comprehensive analytics provide insights into your performance across accuracy, speed, and topic mastery. 
+                Monitor your progress with detailed metrics that highlight improvement over time.
               </p>
             </div>
           </motion.div>
@@ -207,11 +205,10 @@ function WhyFlashbits() {
               <SuccessNotification />
             </div>
             <div className="why-card-content">
-              <h3>Proven results</h3>
+              <h3>Proven Results</h3>
               <p>
-                Join developers who've landed roles at top companies. 
-                A few minutes of daily practice leads to life-changing 
-                offers and career growth.
+                Join developers who have successfully secured positions at leading technology companies. 
+                Consistent daily practice builds the skills and confidence needed for career advancement.
               </p>
             </div>
           </motion.div>

@@ -46,9 +46,9 @@ function Hero() {
             </h1>
             
             <p>
-              Stop doom scrolling. Start learning. flashbits transforms interview prep 
-              into an addictive, TikTok-style experience. Swipe through questions, 
-              earn XP, and level up your skills.
+              Transform your interview preparation with an intuitive, swipe-based learning platform. 
+              Practice coding questions on the go, track your progress, and master the algorithms 
+              that matter most in technical interviews.
             </p>
             
             <div className="hero-cta">

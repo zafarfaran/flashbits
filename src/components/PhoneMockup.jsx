@@ -20,7 +20,7 @@ function PhoneMockup() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          A beautiful, intuitive interface designed for focused learning
+          Experience a clean, intuitive interface engineered for effective learning and consistent practice
         </motion.p>
         
         <div className="mockup-container">

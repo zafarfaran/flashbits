@@ -32,7 +32,7 @@ const problemSets = [
   {
     name: 'Blind 75',
     count: 75,
-    description: 'The most essential LeetCode problems curated by a Blind engineer. Covers all major patterns.',
+    description: 'The essential LeetCode problems curated by industry professionals. Comprehensive coverage of all major algorithmic patterns and data structures.',
     status: 'available',
     color: '#00FF94',
     topics: ['Arrays', 'Trees', 'Graphs', 'DP', 'Strings']
@@ -40,7 +40,7 @@ const problemSets = [
   {
     name: 'NeetCode 150',
     count: 150,
-    description: 'Expanded list with more comprehensive coverage. Perfect after completing Blind 75.',
+    description: 'Expanded problem set with broader topic coverage. Ideal for continued practice after mastering the Blind 75 fundamentals.',
     status: 'coming',
     color: '#FF6B6B',
     topics: ['Backtracking', 'Tries', 'Heap', 'Intervals', 'Math']
@@ -73,8 +73,8 @@ function ProblemSets() {
             Curated <span className="gradient-text">Problem Sets</span>
           </h2>
           <p className="section-subtitle">
-            Master the problems that actually appear in FAANG interviews.
-            MCQ format lets you practice anywhere, anytime.
+            Master the problems most frequently encountered in technical interviews at leading technology companies. 
+            Multiple-choice format enables efficient practice during commutes, breaks, or dedicated study sessions.
           </p>
         </motion.div>
 
@@ -153,7 +153,7 @@ function ProblemSets() {
           transition={{ duration: 0.6, delay: 0.5 }}
         >
           <span className="note-icon">💡</span>
-          <span>All problems are converted to MCQ format — perfect for quick review sessions during commute or breaks.</span>
+          <span>All problems are available in multiple-choice format, optimized for efficient review during commutes, breaks, or focused study sessions.</span>
         </motion.div>
       </div>
     </section>

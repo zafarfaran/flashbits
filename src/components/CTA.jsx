@@ -17,7 +17,7 @@ function CTA() {
               Ready to <span className="gradient-text">Ace Your Interview</span>?
             </h2>
             <p className="cta-subtitle">
-              Join thousands of developers who are leveling up their interview skills
+              Join developers worldwide who are advancing their technical interview capabilities
             </p>
             <div className="cta-buttons">
               <motion.a 
