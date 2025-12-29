@@ -108,20 +108,14 @@ function Hero() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <div className="phone-wrapper">
-              <picture>
-                <source 
-                  srcSet={`${import.meta.env.BASE_URL}screenshots/question-feed-page.webp`}
-                  type="image/webp"
-                />
-                <img 
-                  src={`${import.meta.env.BASE_URL}screenshots/question-feed-page.png`}
-                  alt="flashbits App - Question Feed"
-                  loading="eager"
-                  decoding="async"
-                  fetchpriority="high"
-                  className="phone-mockup-image"
-                />
-              </picture>
+              <img 
+                src={`${import.meta.env.BASE_URL}screenshots/question-feed-page.webp`}
+                alt="flashbits App - Question Feed"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+                className="phone-mockup-image"
+              />
             </div>
           </motion.div>
         </div>

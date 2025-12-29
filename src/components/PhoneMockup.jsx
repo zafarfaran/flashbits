@@ -31,19 +31,13 @@ function PhoneMockup() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <picture>
-              <source 
-                srcSet={`${import.meta.env.BASE_URL}screenshots/settings-page.webp`}
-                type="image/webp"
-              />
-              <img 
-                src={`${import.meta.env.BASE_URL}screenshots/settings-page.png`}
-                alt="Settings"
-                loading="lazy"
-                decoding="async"
-                className="mockup-image"
-              />
-            </picture>
+            <img 
+              src={`${import.meta.env.BASE_URL}screenshots/settings-page.webp`}
+              alt="Settings"
+              loading="lazy"
+              decoding="async"
+              className="mockup-image"
+            />
           </motion.div>
           <motion.div 
             className="mockup-phone center"
@@ -52,19 +46,13 @@ function PhoneMockup() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <picture>
-              <source 
-                srcSet={`${import.meta.env.BASE_URL}screenshots/stats-page.webp`}
-                type="image/webp"
-              />
-              <img 
-                src={`${import.meta.env.BASE_URL}screenshots/stats-page.png`}
-                alt="Stats"
-                loading="lazy"
-                decoding="async"
-                className="mockup-image"
-              />
-            </picture>
+            <img 
+              src={`${import.meta.env.BASE_URL}screenshots/stats-page.webp`}
+              alt="Stats"
+              loading="lazy"
+              decoding="async"
+              className="mockup-image"
+            />
           </motion.div>
 
           <motion.div 
@@ -74,19 +62,13 @@ function PhoneMockup() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <picture>
-              <source 
-                srcSet={`${import.meta.env.BASE_URL}screenshots/streak-screenshot.webp`}
-                type="image/webp"
-              />
-              <img 
-                src={`${import.meta.env.BASE_URL}screenshots/question-feed-page.png`}
-                alt="Question Feed"
-                loading="lazy"
-                decoding="async"
-                className="mockup-image"
-              />
-            </picture>
+            <img 
+              src={`${import.meta.env.BASE_URL}screenshots/streak-screenshot.webp`}
+              alt="Question Feed"
+              loading="lazy"
+              decoding="async"
+              className="mockup-image"
+            />
           </motion.div>
           
         

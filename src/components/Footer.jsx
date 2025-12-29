@@ -38,7 +38,13 @@ function Footer() {
       <div className="container">
         <div className="footer-content">
           <Link to="/" className="footer-logo">
-            <img src={`${import.meta.env.BASE_URL}flashbits.png`} alt="flashbits" className="logo-img" />
+            <img 
+              src={`${import.meta.env.BASE_URL}flashbits.webp`} 
+              alt="flashbits" 
+              className="logo-img"
+              loading="lazy"
+              decoding="async"
+            />
             <span>flashbits</span>
           </Link>
           
