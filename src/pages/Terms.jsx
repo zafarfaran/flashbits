@@ -205,7 +205,12 @@ function Terms() {
           </section>
 
           <section className="terms-section">
-            <h2>20) Contact Us</h2>
+            <h2>20) Dispute Resolution</h2>
+            <p>Before filing a claim, you agree to contact us at <a href="mailto:support@flashbits.co">support@flashbits.co</a> and allow us a reasonable opportunity to resolve the dispute.</p>
+          </section>
+
+          <section className="terms-section">
+            <h2>21) Contact Us</h2>
             <p>If you have questions about these Terms, contact: <a href="mailto:support@flashbits.co">support@flashbits.co</a></p>
           </section>
         </motion.div>
