@@ -114,6 +114,15 @@ function Privacy() {
             
             <h3>A) Service providers (processors)</h3>
             <p>We may share information with trusted vendors who help us operate the Service (e.g., hosting, analytics, crash reporting, email delivery, customer support). They are allowed to use your information only to provide services to us.</p>
+            
+            <h4>Third-party services we use</h4>
+            <p>We use third-party services to help operate and improve the Service. Depending on your use, these providers may process information such as device identifiers, IP address, app usage events, purchase/subscription status, and crash logs. Examples may include:</p>
+            <ul>
+              <li><strong>Firebase (Google)</strong> (e.g., Analytics, Crashlytics, Cloud Messaging) for app analytics, crash reporting, performance monitoring, and push notifications.</li>
+              <li><strong>RevenueCat</strong> for subscription management and purchase validation (e.g., subscription status, transaction/receipt information, and app/device identifiers).</li>
+              <li><strong>Apple App Store / Google Play</strong> for processing in-app payments (we do not receive full card details).</li>
+            </ul>
+            <p>We require these providers to protect your information and use it only to provide services to us.</p>
 
             <h3>B) Legal and safety</h3>
             <p>We may disclose information if required by law or if we believe disclosure is necessary to protect rights, safety, and security, or to respond to lawful requests.</p>
@@ -212,9 +221,9 @@ function Privacy() {
             <h2>16) Contact us</h2>
             <p>If you have questions about this Privacy Policy or your data:</p>
             <ul>
+              <li><strong>Data Controller:</strong> Faran Zafar (operating as “Flashbits”)</li>
               <li><strong>Email:</strong> <a href="mailto:support@flashbits.co">support@flashbits.co</a></li>
               <li><strong>Company:</strong> Flashbits</li>
-              <li><strong>Address:</strong> Apartment 2203 M50 2HJ</li>
             </ul>
           </section>
         </motion.div>
